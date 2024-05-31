@@ -193,7 +193,7 @@ M.cscope_get_result = function(op_n, op_s, symbol, hide_log)
 			end
 		end
 	elseif M.opts.exec == "gtags-cscope" then
-		if vim.loop.fs_stat("GTAGS") == nil then
+		if vim.loop.fs_stat(db_file) == nil then
 			log.warn("GTAGS file not found", hide_log)
 			return RC.DB_NOT_FOUND, nil
 		end
